@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		D283B9212D3E747500072DC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D283B8FF2D3E747400072DC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D283B9062D3E747400072DC7;
+			remoteInfo = SISLoginTEST;
+		};
+		D283B92B2D3E747500072DC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D283B8FF2D3E747400072DC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D283B9062D3E747400072DC7;
+			remoteInfo = SISLoginTEST;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D283B9072D3E747400072DC7 /* SISLoginTEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SISLoginTEST.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D283B9202D3E747500072DC7 /* SISLoginTESTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SISLoginTESTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D283B92A2D3E747500072DC7 /* SISLoginTESTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SISLoginTESTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D283B9322D3E747500072DC7 /* Exceptions for "SISLoginTEST" folder in "SISLoginTEST" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D283B9062D3E747400072DC7 /* SISLoginTEST */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D283B9092D3E747400072DC7 /* SISLoginTEST */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D283B9322D3E747500072DC7 /* Exceptions for "SISLoginTEST" folder in "SISLoginTEST" target */,
+			);
+			path = SISLoginTEST;
+			sourceTree = "<group>";
+		};
+		D283B9232D3E747500072DC7 /* SISLoginTESTTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SISLoginTESTTests;
+			sourceTree = "<group>";
+		};
+		D283B92D2D3E747500072DC7 /* SISLoginTESTUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SISLoginTESTUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D283B9042D3E747400072DC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D283B91D2D3E747500072DC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D283B9272D3E747500072DC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D283B8FE2D3E747400072DC7 = {
+			isa = PBXGroup;
+			children = (
+				D283B9092D3E747400072DC7 /* SISLoginTEST */,
+				D283B9232D3E747500072DC7 /* SISLoginTESTTests */,
+				D283B92D2D3E747500072DC7 /* SISLoginTESTUITests */,
+				D283B9082D3E747400072DC7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D283B9082D3E747400072DC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D283B9072D3E747400072DC7 /* SISLoginTEST.app */,
+				D283B9202D3E747500072DC7 /* SISLoginTESTTests.xctest */,
+				D283B92A2D3E747500072DC7 /* SISLoginTESTUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D283B9062D3E747400072DC7 /* SISLoginTEST */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D283B9332D3E747500072DC7 /* Build configuration list for PBXNativeTarget "SISLoginTEST" */;
+			buildPhases = (
+				D283B9032D3E747400072DC7 /* Sources */,
+				D283B9042D3E747400072DC7 /* Frameworks */,
+				D283B9052D3E747400072DC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D283B9092D3E747400072DC7 /* SISLoginTEST */,
+			);
+			name = SISLoginTEST;
+			packageProductDependencies = (
+			);
+			productName = SISLoginTEST;
+			productReference = D283B9072D3E747400072DC7 /* SISLoginTEST.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D283B91F2D3E747500072DC7 /* SISLoginTESTTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D283B9382D3E747500072DC7 /* Build configuration list for PBXNativeTarget "SISLoginTESTTests" */;
+			buildPhases = (
+				D283B91C2D3E747500072DC7 /* Sources */,
+				D283B91D2D3E747500072DC7 /* Frameworks */,
+				D283B91E2D3E747500072DC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D283B9222D3E747500072DC7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D283B9232D3E747500072DC7 /* SISLoginTESTTests */,
+			);
+			name = SISLoginTESTTests;
+			packageProductDependencies = (
+			);
+			productName = SISLoginTESTTests;
+			productReference = D283B9202D3E747500072DC7 /* SISLoginTESTTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D283B9292D3E747500072DC7 /* SISLoginTESTUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D283B93B2D3E747500072DC7 /* Build configuration list for PBXNativeTarget "SISLoginTESTUITests" */;
+			buildPhases = (
+				D283B9262D3E747500072DC7 /* Sources */,
+				D283B9272D3E747500072DC7 /* Frameworks */,
+				D283B9282D3E747500072DC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D283B92C2D3E747500072DC7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D283B92D2D3E747500072DC7 /* SISLoginTESTUITests */,
+			);
+			name = SISLoginTESTUITests;
+			packageProductDependencies = (
+			);
+			productName = SISLoginTESTUITests;
+			productReference = D283B92A2D3E747500072DC7 /* SISLoginTESTUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D283B8FF2D3E747400072DC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					D283B9062D3E747400072DC7 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					D283B91F2D3E747500072DC7 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = D283B9062D3E747400072DC7;
+					};
+					D283B9292D3E747500072DC7 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = D283B9062D3E747400072DC7;
+					};
+				};
+			};
+			buildConfigurationList = D283B9022D3E747400072DC7 /* Build configuration list for PBXProject "SISLoginTEST" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D283B8FE2D3E747400072DC7;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D283B9082D3E747400072DC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D283B9062D3E747400072DC7 /* SISLoginTEST */,
+				D283B91F2D3E747500072DC7 /* SISLoginTESTTests */,
+				D283B9292D3E747500072DC7 /* SISLoginTESTUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D283B9052D3E747400072DC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D283B91E2D3E747500072DC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D283B9282D3E747500072DC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D283B9032D3E747400072DC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D283B91C2D3E747500072DC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D283B9262D3E747500072DC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D283B9222D3E747500072DC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D283B9062D3E747400072DC7 /* SISLoginTEST */;
+			targetProxy = D283B9212D3E747500072DC7 /* PBXContainerItemProxy */;
+		};
+		D283B92C2D3E747500072DC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D283B9062D3E747400072DC7 /* SISLoginTEST */;
+			targetProxy = D283B92B2D3E747500072DC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D283B9342D3E747500072DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJ677YZM59;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SISLoginTEST/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = egor.partenko.SISLoginTEST;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D283B9352D3E747500072DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJ677YZM59;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SISLoginTEST/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = egor.partenko.SISLoginTEST;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D283B9362D3E747500072DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D283B9372D3E747500072DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D283B9392D3E747500072DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJ677YZM59;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = egor.partenko.SISLoginTESTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISLoginTEST.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SISLoginTEST";
+			};
+			name = Debug;
+		};
+		D283B93A2D3E747500072DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJ677YZM59;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = egor.partenko.SISLoginTESTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SISLoginTEST.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SISLoginTEST";
+			};
+			name = Release;
+		};
+		D283B93C2D3E747500072DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJ677YZM59;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = egor.partenko.SISLoginTESTUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SISLoginTEST;
+			};
+			name = Debug;
+		};
+		D283B93D2D3E747500072DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJ677YZM59;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = egor.partenko.SISLoginTESTUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SISLoginTEST;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D283B9022D3E747400072DC7 /* Build configuration list for PBXProject "SISLoginTEST" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D283B9362D3E747500072DC7 /* Debug */,
+				D283B9372D3E747500072DC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D283B9332D3E747500072DC7 /* Build configuration list for PBXNativeTarget "SISLoginTEST" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D283B9342D3E747500072DC7 /* Debug */,
+				D283B9352D3E747500072DC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D283B9382D3E747500072DC7 /* Build configuration list for PBXNativeTarget "SISLoginTESTTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D283B9392D3E747500072DC7 /* Debug */,
+				D283B93A2D3E747500072DC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D283B93B2D3E747500072DC7 /* Build configuration list for PBXNativeTarget "SISLoginTESTUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D283B93C2D3E747500072DC7 /* Debug */,
+				D283B93D2D3E747500072DC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D283B8FF2D3E747400072DC7 /* Project object */;
+}
