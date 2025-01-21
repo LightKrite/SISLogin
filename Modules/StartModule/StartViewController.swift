@@ -56,6 +56,7 @@ class StartViewController: UIViewController {
     init(viewModel: StartViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        print("StartViewController initialized") // Отладочный вывод
     }
 
     required init?(coder: NSCoder) {
@@ -113,6 +114,7 @@ class StartViewController: UIViewController {
     }
 
     private func setupActions() {
+        print("Setting up button actions") // Отладочный вывод
         loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(registerTapped), for: .touchUpInside)
     }

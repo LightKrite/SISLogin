@@ -9,33 +9,39 @@ import UIKit
 
 class StartCoordinator {
     private let navigationController: UINavigationController
+    private var phoneInputCoordinator: PhoneInputCoordinator?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        print("StartCoordinator initialized") // Отладочный вывод
     }
 
     func start() {
+        print("StartCoordinator.start() called") // Отладочный вывод
         let viewModel = StartViewModel()
         let startVC = StartViewController(viewModel: viewModel)
 
-        // Обрабатываем запрос на вход
+        // Устанавливаем обработчики
         startVC.onLoginRequested = { [weak self] in
-            print("Navigating to PhoneInputCoordinator for login")
+            print("Login requested, calling showPhoneInput")
+            GlobalState.shared.setRegistrationStatus(true)
             self?.showPhoneInput()
         }
 
-        // Обрабатываем запрос на регистрацию
         startVC.onRegistrationRequested = { [weak self] in
-            print("Navigating to PhoneInputCoordinator for registration")
+            print("Registration requested, calling showPhoneInput")
+            GlobalState.shared.setRegistrationStatus(false)
             self?.showPhoneInput()
         }
 
-        navigationController.pushViewController(startVC, animated: true)
+        // Важно! Меняем pushViewController на setViewControllers
+        navigationController.setViewControllers([startVC], animated: true)
     }
 
     private func showPhoneInput() {
-        print("showPhoneInput called with isRegistered: \(GlobalState.shared.isRegistered)")
+        print("showPhoneInput called") // Отладочный вывод
         let phoneInputCoordinator = PhoneInputCoordinator(navigationController: navigationController)
+        self.phoneInputCoordinator = phoneInputCoordinator
         phoneInputCoordinator.start()
     }
 }

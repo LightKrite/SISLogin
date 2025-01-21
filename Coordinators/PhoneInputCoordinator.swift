@@ -11,13 +11,22 @@ class PhoneInputCoordinator {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        print("PhoneInputCoordinator initialized")
     }
 
     func start() {
-        print("PhoneInputCoordinator started with isRegistered: \(GlobalState.shared.isRegistered)")
+        print("PhoneInputCoordinator.start() beginning")
         let viewModel = PhoneInputViewModel()
         let phoneInputVC = PhoneInputViewController(viewModel: viewModel)
+        
+        phoneInputVC.onPhoneNumberSubmitted = { [weak self] in
+            print("Phone number submitted")
+            self?.showSMSCode()
+        }
+        
+        print("About to push PhoneInputViewController")
         navigationController.pushViewController(phoneInputVC, animated: true)
+        print("PhoneInputViewController pushed")
     }
 
     private func showSMSCode() {

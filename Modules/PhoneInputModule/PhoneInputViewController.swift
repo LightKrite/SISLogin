@@ -4,6 +4,7 @@ class PhoneInputViewController: UIViewController {
     private let viewModel: PhoneInputViewModel
 
     var onCodeRequested: (() -> Void)?
+    var onPhoneNumberSubmitted: (() -> Void)?
 
     private let phoneTextField: UITextField = {
         let textField = UITextField()
@@ -26,6 +27,7 @@ class PhoneInputViewController: UIViewController {
     init(viewModel: PhoneInputViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        print("PhoneInputViewController initialized")
     }
 
     required init?(coder: NSCoder) {
@@ -34,9 +36,11 @@ class PhoneInputViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("PhoneInputViewController loaded")
+        print("PhoneInputViewController viewDidLoad called")
         view.backgroundColor = .white
         title = viewModel.getScreenTitle()
+        setupUI()
+        setupActions()
     }
 
     private func setupUI() {
@@ -73,6 +77,16 @@ class PhoneInputViewController: UIViewController {
         } else {
             showAlert(title: "Ошибка", message: "Введите корректный номер телефона")
         }
+    }
+
+    @objc private func submitButtonTapped() {
+        guard let phoneNumber = phoneTextField.text, !phoneNumber.isEmpty else {
+            // Показать ошибку если номер пустой
+            return
+        }
+        
+        // Вызываем замыкающий блок при успешной валидации
+        onPhoneNumberSubmitted?()
     }
 
     private func showAlert(title: String, message: String) {

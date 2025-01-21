@@ -7,12 +7,16 @@
 
 import Foundation
 
-
 class GlobalState {
     static let shared = GlobalState()
-
-    // Переменная состояния всегда возвращает false
-    var isRegistered: Bool {
-        return false
+    
+    // Изменяем с let на var, чтобы можно было изменять значение
+    private(set) var isRegistered: Bool = false
+    
+    private init() {}
+    
+    // Добавляем метод для изменения значения
+    func setRegistrationStatus(_ status: Bool) {
+        isRegistered = status
     }
 }
