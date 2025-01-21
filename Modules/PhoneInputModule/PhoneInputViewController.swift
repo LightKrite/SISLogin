@@ -34,8 +34,9 @@ class PhoneInputViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        setupActions()
+        print("PhoneInputViewController loaded")
+        view.backgroundColor = .white
+        title = viewModel.getScreenTitle()
     }
 
     private func setupUI() {

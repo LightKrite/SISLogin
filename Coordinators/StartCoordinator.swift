@@ -18,22 +18,24 @@ class StartCoordinator {
         let viewModel = StartViewModel()
         let startVC = StartViewController(viewModel: viewModel)
 
+        // Обрабатываем запрос на вход
         startVC.onLoginRequested = { [weak self] in
             print("Navigating to PhoneInputCoordinator for login")
-            self?.showPhoneInput(isRegistration: false)
+            self?.showPhoneInput()
         }
 
+        // Обрабатываем запрос на регистрацию
         startVC.onRegistrationRequested = { [weak self] in
             print("Navigating to PhoneInputCoordinator for registration")
-            self?.showPhoneInput(isRegistration: true)
+            self?.showPhoneInput()
         }
 
         navigationController.pushViewController(startVC, animated: true)
     }
 
-    private func showPhoneInput(isRegistration: Bool) {
-        print("showPhoneInput called with isRegistration: \(isRegistration)")
-        let phoneInputCoordinator = PhoneInputCoordinator(navigationController: navigationController, isRegistration: isRegistration)
+    private func showPhoneInput() {
+        print("showPhoneInput called with isRegistered: \(GlobalState.shared.isRegistered)")
+        let phoneInputCoordinator = PhoneInputCoordinator(navigationController: navigationController)
         phoneInputCoordinator.start()
     }
 }
