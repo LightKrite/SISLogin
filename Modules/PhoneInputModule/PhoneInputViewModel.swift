@@ -69,7 +69,7 @@ class PhoneInputViewModel {
 
     func isPhoneNumberValid(_ phoneNumber: String) -> Bool {
         if phoneNumber.isEmpty { return false }
-        if !phoneNumber.starts(with: "+7") || phoneNumber.count != 11 { return false }
+        if !phoneNumber.starts(with: "+7") || phoneNumber.count != 12 { return false }
 
         if !isRegistered {
             print("Дополнительная проверка для регистрации")

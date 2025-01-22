@@ -8,6 +8,7 @@ import UIKit
 
 class PhoneInputCoordinator {
     private let navigationController: UINavigationController
+    private var smsCodeCoordinator: SMSCodeCoordinator?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -20,6 +21,7 @@ class PhoneInputCoordinator {
         let phoneInputVC = PhoneInputViewController(viewModel: viewModel)
         
         phoneInputVC.onPhoneNumberSubmitted = { [weak self] in
+            print("Phone number submitted, showing SMS code screen")
             self?.showSMSCode()
         }
         
@@ -29,7 +31,9 @@ class PhoneInputCoordinator {
     }
 
     private func showSMSCode() {
-        let smsCodeCoordinator = SMSCodeCoordinator(navigationController: navigationController)
-        smsCodeCoordinator.start()
+        print("Creating SMSCodeCoordinator")
+        let coordinator = SMSCodeCoordinator(navigationController: navigationController)
+        self.smsCodeCoordinator = coordinator
+        coordinator.start()
     }
 }

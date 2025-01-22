@@ -67,15 +67,22 @@ class SMSCodeViewController: UIViewController {
     }
 
     private func setupActions() {
-        verifyButton.addTarget(self, action: #selector(verifyButtonTapped), for: .touchUpInside)
+        verifyButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
     }
 
-    @objc private func verifyButtonTapped() {
-        guard let code = codeTextField.text else { return }
-        if viewModel.validateCode(code) {
+    @objc private func continueButtonTapped() {
+        print("Continue button tapped in SMSCodeViewController")
+        guard let code = codeTextField.text, !code.isEmpty else {
+            showAlert(title: "Ошибка", message: "Введите код")
+            return
+        }
+        
+        if viewModel.isCodeValid(code) {
+            print("SMS code is valid, calling onCodeVerified")
             onCodeVerified?()
         } else {
-            showAlert(title: "Ошибка", message: "Неверный код, попробуйте ещё раз")
+            print("Invalid SMS code")
+            showAlert(title: "Ошибка", message: "Неверный код")
         }
     }
 
