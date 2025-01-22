@@ -13,11 +13,11 @@ class StartCoordinator {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        print("StartCoordinator initialized") // Отладочный вывод
+        print("StartCoordinator initialized")
     }
 
     func start() {
-        print("StartCoordinator.start() called") // Отладочный вывод
+        print("StartCoordinator.start() called")
         let viewModel = StartViewModel()
         let startVC = StartViewController(viewModel: viewModel)
 
@@ -34,14 +34,17 @@ class StartCoordinator {
             self?.showPhoneInput()
         }
 
-        // Важно! Меняем pushViewController на setViewControllers
-        navigationController.setViewControllers([startVC], animated: true)
+        // Проверяем, что navigationController не nil
+        print("Setting root view controller")
+        navigationController.setViewControllers([startVC], animated: false)
     }
 
     private func showPhoneInput() {
-        print("showPhoneInput called") // Отладочный вывод
-        let phoneInputCoordinator = PhoneInputCoordinator(navigationController: navigationController)
-        self.phoneInputCoordinator = phoneInputCoordinator
-        phoneInputCoordinator.start()
+        print("Creating PhoneInputCoordinator")
+        let coordinator = PhoneInputCoordinator(navigationController: navigationController)
+        self.phoneInputCoordinator = coordinator
+        
+        print("Starting PhoneInputCoordinator")
+        coordinator.start()
     }
 }

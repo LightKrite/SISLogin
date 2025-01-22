@@ -20,11 +20,10 @@ class PhoneInputCoordinator {
         let phoneInputVC = PhoneInputViewController(viewModel: viewModel)
         
         phoneInputVC.onPhoneNumberSubmitted = { [weak self] in
-            print("Phone number submitted")
             self?.showSMSCode()
         }
         
-        print("About to push PhoneInputViewController")
+        print("Current navigation stack: \(navigationController.viewControllers.count)")
         navigationController.pushViewController(phoneInputVC, animated: true)
         print("PhoneInputViewController pushed")
     }

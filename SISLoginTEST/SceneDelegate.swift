@@ -3,7 +3,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var appCoordinator: AppCoordinator?
+    private var startCoordinator: StartCoordinator?
 
     func scene(
         _ scene: UIScene,
@@ -12,15 +12,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
+        print("Setting up window and navigation")
         let window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController()
 
-        let startCoordinator = StartCoordinator(navigationController: navigationController)
-        startCoordinator.start()
+        startCoordinator = StartCoordinator(navigationController: navigationController)
+        startCoordinator?.start()
 
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
+
+        print("Window setup complete")
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

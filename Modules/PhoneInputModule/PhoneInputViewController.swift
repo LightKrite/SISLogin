@@ -43,6 +43,11 @@ class PhoneInputViewController: UIViewController {
         setupActions()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("PhoneInputViewController viewWillAppear called")
+    }
+
     private func setupUI() {
         view.backgroundColor = .white
         title = viewModel.getScreenTitle()
@@ -66,15 +71,23 @@ class PhoneInputViewController: UIViewController {
     }
 
     private func setupActions() {
+        print("Setting up continue button action")
         continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
     }
 
     @objc private func continueButtonTapped() {
-        guard let phoneNumber = phoneTextField.text else { return }
-
+        print("Continue button tapped")
+        guard let phoneNumber = phoneTextField.text, !phoneNumber.isEmpty else {
+            print("Phone number is empty")
+            showAlert(title: "Ошибка", message: "Введите номер телефона")
+            return
+        }
+        
         if viewModel.isPhoneNumberValid(phoneNumber) {
-            onCodeRequested?()
+            print("Phone number is valid, calling onPhoneNumberSubmitted")
+            onPhoneNumberSubmitted?()
         } else {
+            print("Phone number is invalid")
             showAlert(title: "Ошибка", message: "Введите корректный номер телефона")
         }
     }
