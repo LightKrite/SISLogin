@@ -4,8 +4,13 @@ class CreatePinViewController: UIViewController {
     private let viewModel: CreatePinViewModel
     private let mainTitleLabel = UILabel()
     private let subtitleLabel = UILabel()
-    private let pinTextField = UITextField()
+    private let pinDotsStackView = UIStackView()
     private let skipButton = UIButton()
+    
+    // Массив для хранения точек PIN-кода
+    private var pinDots: [UIView] = []
+    // Скрытое текстовое поле для ввода PIN-кода
+    private let hiddenPinTextField = UITextField()
     
     init(viewModel: CreatePinViewModel) {
         self.viewModel = viewModel
@@ -18,44 +23,49 @@ class CreatePinViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("CreatePinViewController viewDidLoad called")
         setupUI()
         setupActions()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("CreatePinViewController viewWillAppear called")
     }
     
     private func setupUI() {
         view.backgroundColor = .black
-        title = viewModel.getScreenTitle()
         
-        // Main Title
-        mainTitleLabel.text = viewModel.getMainTitle()
+        // Настройка заголовка
+        mainTitleLabel.text = "Создайте код приложения"
         mainTitleLabel.textColor = .white
         mainTitleLabel.font = .systemFont(ofSize: 28, weight: .bold)
-        mainTitleLabel.textAlignment = .left
         view.addSubview(mainTitleLabel)
         
-        // Subtitle
-        subtitleLabel.text = viewModel.getSubtitle()
+        // Настройка подзаголовка
+        subtitleLabel.text = "Введите код из символов"
         subtitleLabel.textColor = .gray
         subtitleLabel.font = .systemFont(ofSize: 17)
-        subtitleLabel.textAlignment = .left
         view.addSubview(subtitleLabel)
         
-        // PIN TextField
-        pinTextField.isSecureTextEntry = true
-        pinTextField.keyboardType = .numberPad
-        pinTextField.textColor = .white
-        pinTextField.tintColor = .white
-        pinTextField.textAlignment = .center
-        pinTextField.font = .systemFont(ofSize: 24)
-        view.addSubview(pinTextField)
+        // Настройка стека с точками
+        pinDotsStackView.axis = .horizontal
+        pinDotsStackView.spacing = 20
+        pinDotsStackView.distribution = .fillEqually
+        view.addSubview(pinDotsStackView)
         
-        // Skip Button
+        // Создаем 4 точки для PIN-кода
+        for _ in 0..<4 {
+            let dotView = UIView()
+            dotView.backgroundColor = .gray
+            dotView.layer.cornerRadius = 8
+            dotView.widthAnchor.constraint(equalToConstant: 16).isActive = true
+            dotView.heightAnchor.constraint(equalToConstant: 16).isActive = true
+            pinDotsStackView.addArrangedSubview(dotView)
+            pinDots.append(dotView)
+        }
+        
+        // Настройка скрытого текстового поля
+        hiddenPinTextField.keyboardType = .numberPad
+        hiddenPinTextField.isHidden = true
+        hiddenPinTextField.delegate = self
+        view.addSubview(hiddenPinTextField)
+        
+        // Настройка кнопки "Пропустить"
         skipButton.setTitle("Пропустить", for: .normal)
         skipButton.setTitleColor(.white, for: .normal)
         skipButton.backgroundColor = UIColor(red: 0.4, green: 0.4, blue: 1.0, alpha: 1.0)
@@ -68,7 +78,7 @@ class CreatePinViewController: UIViewController {
     private func setupConstraints() {
         mainTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        pinTextField.translatesAutoresizingMaskIntoConstraints = false
+        pinDotsStackView.translatesAutoresizingMaskIntoConstraints = false
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -80,10 +90,9 @@ class CreatePinViewController: UIViewController {
             subtitleLabel.leadingAnchor.constraint(equalTo: mainTitleLabel.leadingAnchor),
             subtitleLabel.trailingAnchor.constraint(equalTo: mainTitleLabel.trailingAnchor),
             
-            pinTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            pinTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
-            pinTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
-            pinTextField.heightAnchor.constraint(equalToConstant: 50),
+            pinDotsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            pinDotsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            pinDotsStackView.widthAnchor.constraint(equalToConstant: 200),
             
             skipButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             skipButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
@@ -93,10 +102,72 @@ class CreatePinViewController: UIViewController {
     }
     
     private func setupActions() {
+        // Добавляем tap gesture для показа клавиатуры
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
         skipButton.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
     }
     
+    @objc private func showKeyboard() {
+        hiddenPinTextField.becomeFirstResponder()
+    }
+    
     @objc private func skipButtonTapped() {
-        // Добавим позже обработку нажатия
+        // Сразу показываем системный алерт при нажатии "Пропустить"
+        showFinalSystemAlert()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Показываем клавиатуру автоматически при появлении экрана
+        hiddenPinTextField.becomeFirstResponder()
+    }
+    
+    private func showFinalSystemAlert() {
+        let alert = UIAlertController(
+            title: "Вы успешно вошли в приложение",
+            message: nil,
+            preferredStyle: .alert
+        )
+        
+        let okAction = UIAlertAction(title: "Ок", style: .default)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
+    }
+    
+    private func showSuccessAlert() {
+        let alertView = CustomAlertView()
+        alertView.show(in: view) { [weak self] in
+            self?.showFinalSystemAlert()
+        }
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension CreatePinViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        // Ограничиваем длину PIN-кода до 4 символов
+        guard updatedText.count <= 4 else { return false }
+        
+        // Обновляем отображение точек
+        for (index, dotView) in pinDots.enumerated() {
+            dotView.backgroundColor = index < updatedText.count ? .white : .gray
+        }
+        
+        // Если введены все 4 цифры
+        if updatedText.count == 4 {
+            // Даем небольшую задержку, чтобы пользователь увидел последнюю точку
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+                self?.showSuccessAlert()
+            }
+        }
+        
+        return true
     }
 }

@@ -14,7 +14,7 @@ class StartViewController: UIViewController {
     var onRegistrationRequested: (() -> Void)?
 
     private let logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "logo")) // Замени на имя файла логотипа
+        let imageView = UIImageView(image: UIImage(named: "Logo"))
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
