@@ -64,12 +64,12 @@ class PhoneInputViewModel {
     }
 
     func getScreenTitle() -> String {
-        return isRegistered ? "Вход" : "Регистрация"
+        return isRegistered ? "Войти" : "Зарегистрироваться"
     }
 
     func isPhoneNumberValid(_ phoneNumber: String) -> Bool {
         if phoneNumber.isEmpty { return false }
-        if !phoneNumber.starts(with: "+7") || phoneNumber.count != 12 { return false }
+        if phoneNumber.count != 10 { return false }
 
         if !isRegistered {
             print("Дополнительная проверка для регистрации")
