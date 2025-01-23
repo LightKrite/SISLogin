@@ -11,13 +11,11 @@ class SMSCodeViewModel {
     private let validCode = "123456" // Заглушка для проверки кода
 
     func validateCode(_ code: String) -> Bool {
+        // Проверяем, что код не пустой
+        if code.isEmpty { return false }
+        
+        // Проверяем, что код совпадает с validCode
         return code == validCode
     }
 
-    func isCodeValid(_ code: String) -> Bool {
-        // Для тестирования можно использовать любой непустой код
-        // В реальном приложении здесь будет проверка с бэкендом
-        print("Validating SMS code: \(code)")
-        return !code.isEmpty
-    }
 }

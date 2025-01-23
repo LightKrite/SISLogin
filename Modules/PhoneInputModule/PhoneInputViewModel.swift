@@ -7,54 +7,6 @@
 
 import Foundation
 
-//class PhoneInputViewModel {
-//    private let isRegistration: Bool
-//
-//    init(isRegistration: Bool = false) {
-//        self.isRegistration = isRegistration
-//        print("PhoneInputViewModel initialized with isRegistration: \(isRegistration)")
-//    }
-//
-//    func getScreenTitle() -> String {
-//        return isRegistration ? "Регистрация" : "Вход"
-//    }
-//
-//    func isPhoneNumberValid(_ phoneNumber: String) -> Bool {
-//        // Логика валидации может различаться для регистрации и входа
-//        if isRegistration {
-//            // Допустим, для регистрации проверяем, что номер уникален (заглушка)
-//            return phoneNumber.starts(with: "+7") && phoneNumber.count == 11
-//        } else {
-//            // Для входа проверяем только формат
-//            return phoneNumber.starts(with: "+7") && phoneNumber.count == 11
-//        }
-//    }
-//}
-
-//class PhoneInputViewModel {
-//    private let isRegistration: Bool
-//
-//    init(isRegistration: Bool) {
-//        self.isRegistration = isRegistration
-//        print("PhoneInputViewModel initialized with isRegistration: \(isRegistration)")
-//    }
-//
-//    func getScreenTitle() -> String {
-//        return isRegistration ? "Регистрация" : "Вход"
-//    }
-//
-//    func isPhoneNumberValid(_ phoneNumber: String) -> Bool {
-//            // Логика валидации может различаться для регистрации и входа
-//            if isRegistration {
-//                // Допустим, для регистрации проверяем, что номер уникален (заглушка)
-//                return phoneNumber.starts(with: "+7") && phoneNumber.count == 11
-//            } else {
-//                // Для входа проверяем только формат
-//                return phoneNumber.starts(with: "+7") && phoneNumber.count == 11
-//            }
-//        }
-//}
-
 class PhoneInputViewModel {
     private let isRegistered: Bool
 
@@ -68,14 +20,22 @@ class PhoneInputViewModel {
     }
 
     func isPhoneNumberValid(_ phoneNumber: String) -> Bool {
+        // Проверяем, что строка не пустая
         if phoneNumber.isEmpty { return false }
+        
+        // Проверяем длину номера (должно быть 10 цифр)
         if phoneNumber.count != 10 { return false }
-
+        
+        // Проверяем, что строка содержит только цифры
+        let digits = CharacterSet.decimalDigits
+        let phoneSet = CharacterSet(charactersIn: phoneNumber)
+        if !digits.isSuperset(of: phoneSet) { return false }
+        
         if !isRegistered {
             print("Дополнительная проверка для регистрации")
             return true
         }
-
+        
         return true
     }
 }

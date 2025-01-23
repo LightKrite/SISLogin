@@ -214,6 +214,7 @@ class PhoneInputViewController: UIViewController {
         guard let phoneNumber = phoneTextField.text, !phoneNumber.isEmpty else {
             print("Phone number is empty")
             showAlert(title: "Ошибка", message: "Введите номер телефона")
+            phoneTextField.text = "" // Очищаем поле при пустом номере
             return
         }
         
@@ -223,6 +224,7 @@ class PhoneInputViewController: UIViewController {
         } else {
             print("Phone number is invalid")
             showAlert(title: "Ошибка", message: "Введите корректный номер телефона")
+            phoneTextField.text = "" // Очищаем поле при невалидном номере
         }
     }
     

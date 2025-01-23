@@ -238,16 +238,18 @@ class SMSCodeViewController: UIViewController {
         let code = otpTextFields.compactMap { $0.text }.joined()
         
         guard !code.isEmpty, code.count == 6 else {
-            showAlert(title: "Ошибка", message: "Введите код")
+            showAlert(title: "Ошибка", message: "Введите код полностью")
+            clearOTPFields()
             return
         }
         
-        if viewModel.isCodeValid(code) {
+        if viewModel.validateCode(code) {
             print("SMS code is valid, calling onCodeVerified")
             onCodeVerified?()
         } else {
             print("Invalid SMS code")
             showAlert(title: "Ошибка", message: "Неверный код")
+            clearOTPFields()
         }
     }
 
@@ -255,6 +257,11 @@ class SMSCodeViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true)
+    }
+
+    private func clearOTPFields() {
+        otpTextFields.forEach { $0.text = "" }
+        otpTextFields.first?.becomeFirstResponder()
     }
 }
 
