@@ -61,7 +61,7 @@ class PhoneInputViewController: UIViewController {
         
         // Установка цвета для placeholder
         let placeholderText = "(___) ___-__-__"
-        let placeholderColor = UIColor(white: 1, alpha: 0.7) // Задайте нужный цвет
+        let placeholderColor = UIColor(white: 1, alpha: 0.7)
         textField.attributedPlaceholder = NSAttributedString(
             string: placeholderText,
             attributes: [.foregroundColor: placeholderColor]
@@ -206,7 +206,7 @@ class PhoneInputViewController: UIViewController {
     }
     
     @objc private func countryCodeButtonTapped() {
-        // Handle country code selection
+
     }
     
     @objc private func getCodeButtonTapped() {
