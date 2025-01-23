@@ -25,7 +25,7 @@ class StartViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "SIS"
-        label.font = .systemFont(ofSize: 42, weight: .medium)
+        label.font = .systemFont(ofSize: 34, weight: .medium)
         label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +35,7 @@ class StartViewController: UIViewController {
     private let subtitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Выбери свою безопасность"
-        label.font = .systemFont(ofSize: 20)
+        label.font = .systemFont(ofSize: 17)
         label.textColor = .white.withAlphaComponent(0.9)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -44,7 +44,7 @@ class StartViewController: UIViewController {
     private let loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Войти по номеру телефона", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.layer.cornerRadius = 28
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -53,7 +53,7 @@ class StartViewController: UIViewController {
     private let noAccountLabel: UILabel = {
         let label = UILabel()
         label.text = "У вас нет аккаунта?"
-        label.font = .systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 14)
         label.textColor = .white.withAlphaComponent(0.7)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ class StartViewController: UIViewController {
     private let registerButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Зарегистрироваться сейчас", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16)
+        button.titleLabel?.font = .systemFont(ofSize: 14)
         button.setTitleColor(UIColor(red: 0.294, green: 0.431, blue: 1, alpha: 1), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

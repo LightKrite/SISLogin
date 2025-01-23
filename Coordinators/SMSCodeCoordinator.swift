@@ -17,7 +17,6 @@ class SMSCodeCoordinator {
     }
 
     func start() {
-        print("SMSCodeCoordinator.start() beginning")
         let viewModel = SMSCodeViewModel()
         let smsCodeVC = SMSCodeViewController(viewModel: viewModel)
 
