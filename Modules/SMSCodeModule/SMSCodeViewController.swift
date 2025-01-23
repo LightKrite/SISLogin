@@ -39,7 +39,7 @@ class SMSCodeViewController: UIViewController {
     private let verificationTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Верификация"
-        label.font = .systemFont(ofSize: 32, weight: .bold)
+        label.font = .systemFont(ofSize: 24, weight: .bold)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -61,7 +61,7 @@ class SMSCodeViewController: UIViewController {
         label.text = "Запросить код можно\nчерез 05:00"
         label.numberOfLines = 2
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 16)
         label.textColor = .white.withAlphaComponent(0.7)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -72,7 +72,7 @@ class SMSCodeViewController: UIViewController {
         button.setTitle(PhoneInputViewModel().getScreenTitle(), for: .normal)
         button.backgroundColor = UIColor(white: 1, alpha: 0.2)
         button.layer.cornerRadius = 28
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -81,7 +81,7 @@ class SMSCodeViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Я не получил код!", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16)
+        button.titleLabel?.font = .systemFont(ofSize: 14)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -167,42 +167,42 @@ class SMSCodeViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             // Back button
-            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            backButton.widthAnchor.constraint(equalToConstant: 44),
-            backButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 72),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 34),
+            backButton.widthAnchor.constraint(equalToConstant: 22),
+            backButton.heightAnchor.constraint(equalToConstant: 22),
             
             // Title
             titleLabel.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             // Verification title
-            verificationTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
+            verificationTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 66),
             verificationTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             // Subtitle
-            subtitleLabel.topAnchor.constraint(equalTo: verificationTitleLabel.bottomAnchor, constant: 16),
+            subtitleLabel.topAnchor.constraint(equalTo: verificationTitleLabel.bottomAnchor, constant: 18),
             subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             // Timer label
-            timerLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 24),
+            timerLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 35),
             timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             // OTP Stack View
-            otpStackView.topAnchor.constraint(equalTo: timerLabel.bottomAnchor, constant: 24),
+            otpStackView.topAnchor.constraint(equalTo: timerLabel.bottomAnchor, constant: 40),
             otpStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            otpStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            otpStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            otpStackView.heightAnchor.constraint(equalToConstant: 50),
+            otpStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 37),
+            otpStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -37),
+            otpStackView.heightAnchor.constraint(equalToConstant: 46),
             
             // Register button
-            registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            registerButton.heightAnchor.constraint(equalToConstant: 56),
-            registerButton.topAnchor.constraint(equalTo: otpStackView.bottomAnchor, constant: 32),
+            registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 37),
+            registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -37),
+            registerButton.heightAnchor.constraint(equalToConstant: 50),
+            registerButton.topAnchor.constraint(equalTo: otpStackView.bottomAnchor, constant: 28),
             
             // No code button
-            noCodeButton.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 16),
+            noCodeButton.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 32),
             noCodeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }

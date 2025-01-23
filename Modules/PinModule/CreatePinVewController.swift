@@ -23,7 +23,7 @@ class CreatePinViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Код приложения"
-        label.font = .systemFont(ofSize: 24, weight: .medium)
+        label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -60,7 +60,7 @@ class CreatePinViewController: UIViewController {
     private let skipButton: UIButton = {
         let button = UIButton()
         button.setTitle("Пропустить", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.layer.cornerRadius = 28
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -160,34 +160,33 @@ class CreatePinViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             // Back button
-            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            backButton.widthAnchor.constraint(equalToConstant: 44),
-            backButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 72),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 34),
+            backButton.widthAnchor.constraint(equalToConstant: 22),
+            backButton.heightAnchor.constraint(equalToConstant: 22),
            
             // Title
             titleLabel.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
            
             // Heading
-            headingLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
-            headingLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            headingLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            headingLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 75),
+            headingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
            
             // Subtitle
-            subtitleLabel.topAnchor.constraint(equalTo: headingLabel.bottomAnchor, constant: 16),
-            subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            subtitleLabel.topAnchor.constraint(equalTo: headingLabel.bottomAnchor, constant: 47),
+            subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
            
             // Dots container
-            dotsContainerView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 32),
+            dotsContainerView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 36),
             dotsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            dotsContainerView.heightAnchor.constraint(equalToConstant: 48),
+            dotsContainerView.heightAnchor.constraint(equalToConstant: 52),
            
             // Skip button
-            skipButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            skipButton.heightAnchor.constraint(equalToConstant: 56),
-            skipButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+            skipButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 36),
+            skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -36),
+            skipButton.heightAnchor.constraint(equalToConstant: 50),
+            skipButton.topAnchor.constraint(equalTo: dotsContainerView.bottomAnchor, constant: 77)
         ])
     }
     

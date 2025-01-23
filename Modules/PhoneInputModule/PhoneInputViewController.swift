@@ -24,38 +24,38 @@ class PhoneInputViewController: UIViewController {
         return label
     }()
     
-        private let phoneLabel: UILabel = {
-            let label = UILabel()
-            label.text = "Номер телефона"
-            label.font = .systemFont(ofSize: 16)
-            label.textColor = .white
-            label.translatesAutoresizingMaskIntoConstraints = false
-            return label
-        }()
+    private let phoneLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Номер телефона"
+        label.font = .systemFont(ofSize: 13)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     private let countryCodeButton: UIButton = {
         let button = UIButton()
-
+        
         var config = UIButton.Configuration.plain()
         config.baseBackgroundColor = UIColor(white: 1, alpha: 0.1) // Прозрачный фон
         config.baseForegroundColor = .white // Цвет текста и иконки
-        config.image = UIImage(systemName: "chevron.down") // Иконка справа
+        config.image = UIImage(systemName: "arrowtriangle.down.fill")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 8, weight: .regular))
         config.title = "+7" // Текст кнопки
         config.imagePadding = 8 // Отступ между текстом и иконкой
         config.imagePlacement = .trailing // Иконка справа от текста
-
+        
         button.configuration = config
         button.layer.cornerRadius = 12
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor(white: 1, alpha: 0.2).cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
-
+        
         return button
     }()
     
     private let phoneTextField: UITextField = {
         let textField = UITextField()
-        textField.font = .systemFont(ofSize: 18)
+        textField.font = .systemFont(ofSize: 19)
         textField.textColor = .white
         textField.keyboardType = .numberPad
         
@@ -89,7 +89,7 @@ class PhoneInputViewController: UIViewController {
     private let getCodeButton: UIButton = {
         let button = UIButton()
         button.setTitle("Получить код", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.layer.cornerRadius = 28
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -151,10 +151,10 @@ class PhoneInputViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             // Back button
-            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            backButton.widthAnchor.constraint(equalToConstant: 44),
-            backButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 72),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 34),
+            backButton.widthAnchor.constraint(equalToConstant: 22),
+            backButton.heightAnchor.constraint(equalToConstant: 22),
             
             // Title
             titleLabel.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
@@ -162,29 +162,29 @@ class PhoneInputViewController: UIViewController {
             
             // Phone label
             phoneLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
-            phoneLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            phoneLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 34),
             
             // Country code button
-            countryCodeButton.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 8),
-            countryCodeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            countryCodeButton.widthAnchor.constraint(equalToConstant: 80),
-            countryCodeButton.heightAnchor.constraint(equalToConstant: 48),
+            countryCodeButton.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 15),
+            countryCodeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 34),
+            countryCodeButton.widthAnchor.constraint(equalToConstant: 70),
+            countryCodeButton.heightAnchor.constraint(equalToConstant: 50),
             
             // Phone text field
-            phoneTextField.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 8),
-            phoneTextField.leadingAnchor.constraint(equalTo: countryCodeButton.trailingAnchor, constant: 8),
-            phoneTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            phoneTextField.heightAnchor.constraint(equalToConstant: 48),
+            phoneTextField.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 15),
+            phoneTextField.leadingAnchor.constraint(equalTo: countryCodeButton.trailingAnchor, constant: 18),
+            phoneTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -37),
+            phoneTextField.heightAnchor.constraint(equalToConstant: 50),
             
             // Info label
-            infoLabel.topAnchor.constraint(equalTo: phoneTextField.bottomAnchor, constant: 8),
-            infoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            infoLabel.topAnchor.constraint(equalTo: phoneTextField.bottomAnchor, constant: 22),
+            infoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             // Get code button
-            getCodeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            getCodeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            getCodeButton.heightAnchor.constraint(equalToConstant: 56),
-            getCodeButton.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 32)
+            getCodeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 36),
+            getCodeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -36),
+            getCodeButton.heightAnchor.constraint(equalToConstant: 50),
+            getCodeButton.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 53)
         ])
     }
     
@@ -206,7 +206,7 @@ class PhoneInputViewController: UIViewController {
     }
     
     @objc private func countryCodeButtonTapped() {
-
+        
     }
     
     @objc private func getCodeButtonTapped() {

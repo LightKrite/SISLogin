@@ -62,7 +62,7 @@ class StartViewController: UIViewController {
     
     private let registerButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Зарегистрироваться сейчас", for: .normal)
+        button.setTitle("Зарегистрируйтесь сейчас", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14)
         button.setTitleColor(UIColor(red: 0.294, green: 0.431, blue: 1, alpha: 1), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -104,7 +104,7 @@ class StartViewController: UIViewController {
         NSLayoutConstraint.activate([
             // Logo constraints
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 265),
             logoImageView.widthAnchor.constraint(equalToConstant: 80),
             logoImageView.heightAnchor.constraint(equalToConstant: 80),
             
@@ -114,18 +114,18 @@ class StartViewController: UIViewController {
             
             // Subtitle constraints
             subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 18),
             
             // Login button constraints
             loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 48),
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            loginButton.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 100),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
             loginButton.heightAnchor.constraint(equalToConstant: 56),
             
             // No account label constraints
             noAccountLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            noAccountLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 32),
+            noAccountLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 100),
             
             // Register button constraints
             registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),

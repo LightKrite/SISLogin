@@ -97,26 +97,24 @@ class SupportViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             // Back button
-            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            backButton.widthAnchor.constraint(equalToConstant: 44),
-            backButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 72),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 34),
+            backButton.widthAnchor.constraint(equalToConstant: 22),
+            backButton.heightAnchor.constraint(equalToConstant: 22),
             
             // Title
-            titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 40),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 70),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             // Subtitle
-            subtitleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            subtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 36),
+            subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             // Support button
-            supportButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            supportButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            supportButton.heightAnchor.constraint(equalToConstant: 56),
-            supportButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+            supportButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 37),
+            supportButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -37),
+            supportButton.heightAnchor.constraint(equalToConstant: 50),
+            supportButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -328)
         ])
     }
     
