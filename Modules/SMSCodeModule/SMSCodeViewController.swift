@@ -139,6 +139,7 @@ class SMSCodeViewController: UIViewController {
         for i in 0..<6 {
             let textField = createOTPTextField()
             textField.tag = i
+            textField.delegate = self
             otpStackView.addArrangedSubview(textField)
             otpTextFields.append(textField)
         }
@@ -310,31 +311,62 @@ class SMSCodeViewController: UIViewController {
 }
 
 extension SMSCodeViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // Allow only single digit
-        if string.count > 1 {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+
+        // Проверяем, что пользователь нажал backspace
+        if string.isEmpty {
+            // 1. Если текущее поле НЕ пустое, стираем символ и переходим к предыдущему
+            if let currentText = textField.text, !currentText.isEmpty {
+                textField.text = ""
+                // Переходим к предыдущему полю, если оно есть
+                let prevIndex = textField.tag - 1
+                if prevIndex >= 0 {
+                    otpTextFields[prevIndex].becomeFirstResponder()
+                }
+            } else {
+                // 2. Если текущее поле уже пустое, стираем символ в предыдущем поле и уходим в него
+                let prevIndex = textField.tag - 1
+                if prevIndex >= 0 {
+                    let prevTextField = otpTextFields[prevIndex]
+                    prevTextField.text = ""
+                    prevTextField.becomeFirstResponder()
+                }
+            }
+            // Возвращаем false, т.к. мы уже обработали backspace вручную
             return false
         }
         
-        // Update the text field
-        if let text = textField.text, let textRange = Range(range, in: text) {
+        // ======== Обычный ввод символов (не backspace) ========
+
+        // Ограничиваем ввод максимум одним символом за раз
+        guard string.count <= 1 else { return false }
+
+        if let text = textField.text,
+           let textRange = Range(range, in: text) {
+
             let updatedText = text.replacingCharacters(in: textRange, with: string)
+
+            // Разрешаем вводить только 1 символ
             if updatedText.count <= 1 {
+                // Устанавливаем текст вручную
                 textField.text = updatedText
-                
-                // Move to next field if input is provided
+
+                // Если пользователь ввёл символ, переходим к следующему полю
                 if updatedText.count == 1 {
                     if textField.tag < otpTextFields.count - 1 {
                         otpTextFields[textField.tag + 1].becomeFirstResponder()
                     } else {
+                        // Если это последнее поле, убираем фокус
                         textField.resignFirstResponder()
-                        // Handle complete OTP entry
+                        // И запускаем валидацию кода
                         validateOTP()
                     }
                 }
-                return false
             }
         }
+        // Возвращаем false, чтобы UITextField не обрабатывал ввод повторно
         return false
     }
-        }
+}
