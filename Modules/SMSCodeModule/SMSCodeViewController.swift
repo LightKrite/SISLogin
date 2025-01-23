@@ -15,6 +15,7 @@ class SMSCodeViewController: UIViewController {
     private var timer: Timer?
     private var timeRemaining: Int = 300 // 5 minutes in seconds
     var onCodeVerified: (() -> Void)?
+    var onNoCodeTapped: (() -> Void)?
 
     
     private let backButton: UIButton = {
@@ -239,7 +240,7 @@ class SMSCodeViewController: UIViewController {
     }
     
     @objc private func noCodeButtonTapped() {
-        // Handle no code received
+        onNoCodeTapped?()
     }
 
     @objc private func registerButtonTapped() {
