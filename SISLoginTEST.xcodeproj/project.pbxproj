@@ -58,6 +58,26 @@
 			path = SISLoginTESTUITests;
 			sourceTree = "<group>";
 		};
+		D283B93F2D3E771700072DC7 /* Modules */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D283B9402D3E772300072DC7 /* Coordinators */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		D283B9412D3E773400072DC7 /* Recources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Recources;
+			sourceTree = "<group>";
+		};
+		D283B9422D3E774100072DC7 /* Utils */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +108,10 @@
 		D283B8FE2D3E747400072DC7 = {
 			isa = PBXGroup;
 			children = (
+				D283B9422D3E774100072DC7 /* Utils */,
+				D283B9412D3E773400072DC7 /* Recources */,
+				D283B9402D3E772300072DC7 /* Coordinators */,
+				D283B93F2D3E771700072DC7 /* Modules */,
 				D283B9092D3E747400072DC7 /* SISLoginTEST */,
 				D283B9232D3E747500072DC7 /* SISLoginTESTTests */,
 				D283B92D2D3E747500072DC7 /* SISLoginTESTUITests */,
@@ -122,6 +146,10 @@
 			);
 			fileSystemSynchronizedGroups = (
 				D283B9092D3E747400072DC7 /* SISLoginTEST */,
+				D283B93F2D3E771700072DC7 /* Modules */,
+				D283B9402D3E772300072DC7 /* Coordinators */,
+				D283B9412D3E773400072DC7 /* Recources */,
+				D283B9422D3E774100072DC7 /* Utils */,
 			);
 			name = SISLoginTEST;
 			packageProductDependencies = (
@@ -292,11 +320,14 @@
 				DEVELOPMENT_TEAM = YJ677YZM59;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SISLoginTEST/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SIS;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,9 +335,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = egor.partenko.SISLoginTEST;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,11 +355,14 @@
 				DEVELOPMENT_TEAM = YJ677YZM59;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SISLoginTEST/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SIS;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,9 +370,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = egor.partenko.SISLoginTEST;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
